@@ -10,6 +10,10 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="../Backend/works.js" type="module"></script>
+	<script src="./Login/auth.js" type="module"></script>
+	<script src="./modale.js" type="module"></script>
+	<script src="./modaleAjout.js" type="module"></script>
+	<script src="./dropzone.js" type="module"></script>
 </head>
 <body>
 <header>
@@ -36,12 +40,14 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
-		<div class="filter-bar" id="filter">
-			<button class=button-filter id="f-tous">Tous</button>
-			<button class="button-filter" id="f-objets">Objets</button>
-			<button class="button-filter" id="f-appartements">Appartements</button>
-			<button class="button-filter" id="f-hotel">Hôtels & restaurants</button>
+		<div id="top-portfolio">
+			<h2>Mes Projets</h2>
+			<div class="filter-bar" id="filter">
+				<button class=button-filter id="f-tous">Tous</button>
+				<button class="button-filter" id="f-objets">Objets</button>
+				<button class="button-filter" id="f-appartements">Appartements</button>
+				<button class="button-filter" id="f-hotel">Hôtels & restaurants</button>
+			</div>
 		</div>
 		<div class="gallery" id="worksContainer">
 			<div class="loader">Chargement en cours...</div>
@@ -69,5 +75,54 @@
 		</ul>
 	</nav>
 </footer>
+
+<!--Modale de connexion-->
+<div id="modifier-modal" class="modal">
+	<div class="modal-content">
+	  <span class="close">&times;</span>
+	  <h2>Galerie photo</h2>
+	  <div id="galerie-modal"></div>
+	  <div class="footer-modal">
+		<button class="btn-modal">Ajouter une photo</button>
+		<a>Supprimer la gallerie</a>
+	  </div>
+	</div>
+  </div>
+<!--Modale de modification de travaux-->
+<div id="modal-ajout" class="modal-works">
+	<div class="modal-content-works">
+		<div class="header-modal">
+			<span class="retour">&#8592;</span>
+			<span class="close-aj">&times;</span>
+		</div>
+		<h2>Ajout photo</h2>
+		<div class="ajouter-photo">
+		</div>
+		<form class="ajout-works" id="ajout-works">
+			<div class="depot">
+				<div class="depot-illus">
+					<img src="./assets/icons/Group.png" alt="Ajouter une photo" class="img-depot"/>
+				</div>
+				<label for="depo-img" id="depo-btn">+ Ajouter photo</label>
+				<input type="file" id="depo-img" style="display: none;">
+			</div>
+			<div class="title">
+				<label for="titre">Titre</label>
+				<input type="text" name="titre" id="ajout-titre">
+			</div>
+			<div class="cat">
+				<label for="categorie">Catégorie</label>
+				<select id="categorie" name="categorie">
+					<option value="Objets">Objets</option>
+					<option value="Appartements">Appartements</option>
+					<option value="Hotels & restaurants">Hotels & restaurants</option>
+				</select>
+			</div>
+			<div class="validation">	
+				<input type="submit" value="Valider">
+			</div>	
+		</form>
+	</div>
+</div>
 </body>
 </html>

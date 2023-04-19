@@ -16,15 +16,9 @@ async function login(email, password) {
       throw new Error(errorMessage);
     }
     
-    localStorage.setItem("token",JSON.stringify(responseData.token))
-
-    if(localStorage.getItem("token")){
-      console.log(localStorage.getItem("token"))
-    }
-    
-    
     const responseData = await response.json();
     console.log(responseData);
+    localStorage.setItem("token",JSON.stringify(responseData.token))
     window.location.href = "../index.html";
   } catch (error) {
     console.error(error);
