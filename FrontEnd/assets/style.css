@@ -31,6 +31,11 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+
+*{
+	box-sizing: border-box;
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -251,10 +256,12 @@ footer nav ul {
   
   .modal-content {
 	display: flex;
+	position: fixed;
 	flex-direction: column;
 	align-items: center;
+	left: 25%;
+	top: 5%;
 	background-color: white;
-	margin: 15% auto;
 	padding: 20px;
 	border: 1px solid #888;
 	width: 40%;
@@ -274,6 +281,14 @@ footer nav ul {
 	margin-bottom: 30px;
 }
 
+.sup-icon {
+	width: 5%;
+	height: 5%;
+	object-fit: none;
+
+}
+
+
   .close:hover,
   .close:focus {
 	color: black;
@@ -284,23 +299,44 @@ footer nav ul {
   #galerie-modal{
 	display: grid;
 	justify-content: center;
-	grid-template-columns: repeat(5, 60px);
-    grid-template-rows: repeat(3, 100px);
+	width: 90%;
+	height: 100%;
+	grid-template-columns: repeat(5, 15%);
+    grid-template-rows: repeat(3, 30%);
 	grid-auto-flow: dense;
 	grid-gap: 40px;
 }
 
 
 .photo {
-	width: 70px;
-	height: 100px;
+	width: 100%;
+	height: 100%px;
+	position: relative; 
 }
 
-  .photo img {
+.photo a {
+	position: absolute;
+	top: 0;
+	right: 0; 
+}
+
+.photo .sup-icon {
+	width: 20px; 
+	height: 20px;
+	opacity: 0.6; 
+}
+
+.photo .sup-icon:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+
+.photo img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-  }
+}
 
 .footer-modal{
 	display: flex;
@@ -337,6 +373,7 @@ footer nav ul {
 .modal-works {
 	display: none;
 	position: absolute;
+	position: fixed;
 	z-index: 1;
 	left: 0;
 	top: 0;
@@ -380,8 +417,10 @@ footer nav ul {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: fixed;
+	left: 25%;
+    top: 15%;
 	background-color: white;
-	margin: 15% auto;
 	padding: 20px;
 	border: 1px solid #888;
 	width: 40%;

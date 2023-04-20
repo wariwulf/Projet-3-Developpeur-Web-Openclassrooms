@@ -7,6 +7,9 @@
             element.setAttribute('class', 'photo');
             element.innerHTML = `                
                     <img src="${data.imageUrl}" alt="${data.title}">
+                    <a href="">
+                        <img src="./assets/icons/supprimer.png" alt="supprimer" class="sup-icon">
+                    </a>
                     <p>Modifier</>               
             `;        
         }
