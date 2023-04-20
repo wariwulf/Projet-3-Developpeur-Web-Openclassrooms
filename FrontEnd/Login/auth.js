@@ -21,7 +21,7 @@ if(localStorage.getItem("token")) {
     modifierLink.addEventListener('click', function(event) {
       event.preventDefault();
       modifierModal.style.display = 'block';
-    modalVisible = true;
+      modalVisible = true;
     });
   
     // Fermer la modale lorsque l'utilisateur clique sur la croix
@@ -51,7 +51,6 @@ if(localStorage.getItem("token")) {
     
     
     const addButton = document.querySelector('.btn-modal');
-    const closeButton = document.querySelector('.close');
   
     // Fonction pour ouvrir la modale d'ajout de photo
     const openAddModal = () => {
@@ -69,11 +68,6 @@ if(localStorage.getItem("token")) {
     addButton.addEventListener('click', () => {
       closeModal();
       openAddModal();
-    });
-  
-    // Ajout du gestionnaire d'événements sur le bouton de fermeture
-    closeButton.addEventListener('click', () => {
-      closeModal();
     });
   }
 

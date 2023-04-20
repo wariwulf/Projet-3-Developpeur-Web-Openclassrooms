@@ -14,6 +14,8 @@
 	<script src="./modale.js" type="module"></script>
 	<script src="./modaleAjout.js" type="module"></script>
 	<script src="./dropzone.js" type="module"></script>
+	<script src="./ajoutWorks.js" type="module"></script>
+	<script src="./postData.js" type="module"></script>
 </head>
 <body>
 <header>
@@ -77,7 +79,7 @@
 </footer>
 
 <!--Modale de connexion-->
-<div id="modifier-modal" class="modal">
+<aside id="modifier-modal" class="modal">
 	<div class="modal-content">
 	  <span class="close">&times;</span>
 	  <h2>Galerie photo</h2>
@@ -87,9 +89,9 @@
 		<a>Supprimer la gallerie</a>
 	  </div>
 	</div>
-  </div>
+  </aside>
 <!--Modale de modification de travaux-->
-<div id="modal-ajout" class="modal-works">
+<aside id="modal-ajout" class="modal-works">
 	<div class="modal-content-works">
 		<div class="header-modal">
 			<span class="retour">&#8592;</span>
@@ -104,18 +106,15 @@
 					<img src="./assets/icons/Group.png" alt="Ajouter une photo" class="img-depot"/>
 				</div>
 				<label for="depo-img" id="depo-btn">+ Ajouter photo</label>
-				<input type="file" id="depo-img" style="display: none;">
+				<input name="image" type="file" id="depo-img" style="display: none;">
 			</div>
 			<div class="title">
 				<label for="titre">Titre</label>
-				<input type="text" name="titre" id="ajout-titre">
+				<input type="string" name="title" id="ajout-titre">
 			</div>
 			<div class="cat">
 				<label for="categorie">Catégorie</label>
-				<select id="categorie" name="categorie">
-					<option value="Objets">Objets</option>
-					<option value="Appartements">Appartements</option>
-					<option value="Hotels & restaurants">Hotels & restaurants</option>
+				<select id="categorie" name="category">
 				</select>
 			</div>
 			<div class="validation">	
@@ -123,6 +122,6 @@
 			</div>	
 		</form>
 	</div>
-</div>
+</aside>
 </body>
 </html>
