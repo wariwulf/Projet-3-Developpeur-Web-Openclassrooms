@@ -1,5 +1,20 @@
 if(localStorage.getItem("token")) {
     console.log(localStorage.getItem("token"));
+
+    const logoutLi = document.createElement("li");
+    const logoutLink = document.createElement("a");
+    logoutLink.setAttribute('href', '#');
+    logoutLink.setAttribute('class', 'logout');
+    logoutLink.innerText = "Logout";
+    logoutLi.appendChild(logoutLink);
+
+    // Recherchez l'élément ul parent et récupérez le lien "login" à remplacer
+    const navUl = document.querySelector("#nav-ul");
+    const loginLink = document.querySelector(".a-login");
+
+    loginLink.replaceWith(logoutLi);
+
+
     const modifier = document.createElement("div");
     modifier.setAttribute('class', 'modifier');
     modifier.innerHTML = `

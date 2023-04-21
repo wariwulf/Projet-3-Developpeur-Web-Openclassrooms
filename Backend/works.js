@@ -1,5 +1,5 @@
 
-(async ()  =>{
+(async ()  => {
 
     let works;
     
@@ -36,7 +36,7 @@
         works = await loadWorks();
         updateWorkContainer(works);
     }
-    await main ();
+    await main();
 
     const buttonTous = document.querySelector("#f-tous");
     buttonTous.addEventListener("click", async function () {
@@ -46,7 +46,7 @@
         });
         console.log(dataFilter);
         updateWorkContainer(dataFilter);
-        });
+    });
         
     const buttonObjet = document.querySelector("#f-objets");
     buttonObjet.addEventListener("click", async function () {
@@ -56,7 +56,7 @@
         });
         console.log(dataFilter);
         updateWorkContainer(dataFilter);
-        });
+    });
 
     const buttonApp = document.querySelector("#f-appartements");
     buttonApp.addEventListener("click", async function () {
@@ -66,7 +66,7 @@
         });
         console.log(dataFilter);
         updateWorkContainer(dataFilter);
-        });
+    });
 
     const buttonHotel = document.querySelector("#f-hotel");
     buttonHotel.addEventListener("click", async function () {
@@ -76,8 +76,5 @@
         });
         console.log(dataFilter);
         updateWorkContainer(dataFilter);
-        });    
-
+    });    
 })()
-
-

@@ -7,6 +7,7 @@ fetch('http://localhost:5678/api/categories')
     // Ajouter les éléments du select à partir des données reçues
     data.forEach(category => {
       const option = document.createElement('option');
+      option.value = category.id;
       option.text = category.name;
       select.appendChild(option);
     });

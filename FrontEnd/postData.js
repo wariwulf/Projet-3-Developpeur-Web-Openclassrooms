@@ -2,6 +2,7 @@ function envoyerFormulaire(event) {
     event.preventDefault();
   
     const form = event.target;
+    console.log(form);
     const formData = new FormData(form);
     const token = JSON.parse(localStorage.getItem("token"));
   
@@ -10,11 +11,7 @@ function envoyerFormulaire(event) {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-      body: {
-        image: formData.get("image") ? formData.get("image").split(",")[1] : null,
-        title: formData.get("title") || "",
-        category: parseInt(formData.get("category")) || null,
-      },
+      body: formData,
     };
   
     fetch("http://localhost:5678/api/works", options)
