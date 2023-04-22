@@ -6,13 +6,13 @@
         const element = document.createElement('div'); {
             element.setAttribute('class', 'photo');
             element.innerHTML = `                
-                    <img src="${data.imageUrl}" alt="${data.title}" data-work-id="${data.id}">
-                    <a href="">
+                    <img class="apercu" src="${data.imageUrl}" alt="${data.title}" data-id="${data.id}">
+                    <a href="" class="supp" data-id="${data.id}">
                         <img src="./assets/icons/supprimer.png"     
                             alt="supprimer" 
                             class="sup-icon">
                     </a>
-                    <p>Modifier</>               
+                    <p>Modifier</p>               
             `; 
             console.log(".photo",data.id);       
         }
