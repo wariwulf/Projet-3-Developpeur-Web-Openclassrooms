@@ -252,6 +252,7 @@ footer nav ul {
 	height: 100%;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.4);
+	box-sizing: border-box;
   }
   
   .modal-content {
@@ -300,7 +301,7 @@ footer nav ul {
 	display: grid;
 	justify-content: center;
 	width: 90%;
-	height: 100%;
+	height: 80%;
 	grid-template-columns: repeat(5, 15%);
     grid-template-rows: repeat(3, 30%);
 	grid-auto-flow: dense;
@@ -310,7 +311,7 @@ footer nav ul {
 
 .photo {
 	width: 100%;
-	height: 100%px;
+	height: 80%;
 	position: relative; 
 }
 
@@ -344,7 +345,6 @@ footer nav ul {
 	align-items: center;
 	justify-content: end;
 	margin-top: auto;
-	margin-bottom: 35px;
 	border-top: 1px solid #aaa;
 	padding-top: 30px;
 	width: 70%;
@@ -457,6 +457,12 @@ footer nav ul {
 	margin: 15px;
 }
 
+
+#depot-img {
+	width: 25%;
+	height: 25%;
+	background-color: #888;
+}
 
 #depo-btn {
 	font-size: 14px;

@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', async () => {
+    const photo = await loadPhoto();
+    updatePhotoContainer(photo);
+    addDeleteEventListeners();
+  });
+
+
 const deleteWork = async (workId) => {
     const token = localStorage.getItem('token');
     const response = await fetch(`http://localhost:5678/api/works/${workId}`, {
@@ -6,6 +13,8 @@ const deleteWork = async (workId) => {
         'Authorization': `Bearer ${token}`
       }
     });
+    const responseData = await response.json();
+    console.log(responseData);
     return response.json();
   }
   
