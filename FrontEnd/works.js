@@ -38,6 +38,48 @@
     }
     await main();
 
+    /************   Gestion des Filtres ************/
+
+    function addFilterListeners() {
+        const buttons = document.querySelectorAll(".button-filter");
+        buttons.forEach((button) => {
+          button.addEventListener("click", async function () {
+            const data = await loadWorks();
+            let dataFilter;
+            if (button.id === "f-tous") {
+              dataFilter = data.filter(function (work) {
+                return work;
+              });
+            } else if (button.id === "f-objets") {
+              dataFilter = data.filter(function (work) {
+                return work.category.name === "Objets";
+              });
+            } else if (button.id === "f-autre") {
+              dataFilter = data.filter(function (work) {
+                return work.category.name !== "Objets";
+              });
+            } else if (button.id === "f-appartements") {
+              dataFilter = data.filter(function (work) {
+                return work.category.name === "Appartements";
+              });
+            } else if (button.id === "f-hotel") {
+              dataFilter = data.filter(function (work) {
+                return work.category.name === "Hotels & restaurants";
+              });
+            }
+      
+            updateWorkContainer(dataFilter);
+            buttons.forEach((button) => button.classList.remove("active-filter"));
+            button.classList.add("active-filter");
+          });
+        });
+      }
+
+
+      addFilterListeners();
+
+    /*************  Filtre Tous  ***************/
+
     const buttonTous = document.querySelector("#f-tous");
     buttonTous.addEventListener("click", async function () {
         const data = await loadWorks();
@@ -47,8 +89,11 @@
         console.log(dataFilter);
         updateWorkContainer(dataFilter);
     });
-        
+    
+    /********    Filtre Objet  *************/
+
     const buttonObjet = document.querySelector("#f-objets");
+
     buttonObjet.addEventListener("click", async function () {
         const data = await loadWorks();
         const dataFilter = data.filter(function (work) {
@@ -57,6 +102,9 @@
         console.log(dataFilter);
         updateWorkContainer(dataFilter);
     });
+
+
+    /***************   Filtre Appartement **************/
 
     const buttonApp = document.querySelector("#f-appartements");
     buttonApp.addEventListener("click", async function () {
@@ -67,6 +115,11 @@
         console.log(dataFilter);
         updateWorkContainer(dataFilter);
     });
+
+
+
+    /***************  Filtre Hotel et Restaurants **********/
+
 
     const buttonHotel = document.querySelector("#f-hotel");
     buttonHotel.addEventListener("click", async function () {

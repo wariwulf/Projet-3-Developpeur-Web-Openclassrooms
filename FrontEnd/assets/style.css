@@ -100,10 +100,12 @@ nav li {
 	font-size: 1.2em;
 }
 
-.a-login {
+a {
 	text-decoration: none;
 	color: inherit;
+	font-size: 1em;
 }
+
 
 li:hover {
 	color: #B1663C;
@@ -136,9 +138,25 @@ li:hover {
 	width: 100%;
 	height: 50px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 50px;
+}
+
+.link {
+	align-self: flex-start;
+	padding-left: 40px;
+}
+
+.titre-modif {
+	display: flex;
+	align-items: center;
+}
+
+#modifier-link {
+	display: flex;
+	align-items: center;
 }
 
 .modifier a {
@@ -160,6 +178,7 @@ li:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 20px;
 	
 }
 
@@ -170,6 +189,13 @@ li:hover {
 	margin-left: 15px;
 	color: #1D6154;
 	border: solid 2px #1D6154;
+	font-weight: bold;
+	font-family: 'Syne';
+}
+
+.active-filter {
+	background-color: #1D6154;
+	color: white;
 }
 
 
@@ -313,12 +339,6 @@ footer nav ul {
 	width: 100%;
 	height: 80%;
 	position: relative; 
-}
-
-.photo a {
-	position: absolute;
-	top: 0;
-	right: 0; 
 }
 
 .photo .sup-icon {

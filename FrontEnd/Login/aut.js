@@ -18,27 +18,35 @@ if(localStorage.getItem("token")) {
     const modifier = document.createElement("div");
     modifier.setAttribute('class', 'modifier');
     modifier.innerHTML = `
-      <h2>Mes projets</h2>
-      <a href="#modifier-modal" id="modifier-link">
-        <img class="img-modifier" src="./assets/icons/modifier.png" alt="Modifier"/>
-        Modifier
+      <a href="#modifier-modal" id="modifier-link" class="link">
+      <img class="img-modifier" src="./assets/icons/modifier.png" alt="Modifier"/>
+      Modifier
       </a>
+      <div class="titre-modif">
+        <h2>Mes projets</h2>
+        <a href="#modifier-modal" id="modifier-link">
+          <img class="img-modifier" src="./assets/icons/modifier.png" alt="Modifier"/>
+          Modifier
+        </a>
+      </div>  
     `;
     const remp = document.querySelector("#top-portfolio");
     remp.replaceWith(modifier);
   
     const modifierModal = document.querySelector('#modifier-modal');
-    const modifierLink = document.querySelector('#modifier-link');
+    const modifierLink = document.querySelectorAll('#modifier-link');
     const closeBtn = document.querySelector('.close');
     let modalVisible = false;
   
     // Ouvrir la modale lorsque l'utilisateur clique sur le lien
-    modifierLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      modifierModal.style.display = 'block';
-      modalVisible = true;
+    modifierLink.forEach(modifierLink => {
+      modifierLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modifierModal.style.display = 'block';
+        modalVisible = true;
+      });
     });
-  
+    
     // Fermer la modale lorsque l'utilisateur clique sur la croix
     closeBtn.addEventListener('click', function() {
         modifierModal.style.display = 'none';

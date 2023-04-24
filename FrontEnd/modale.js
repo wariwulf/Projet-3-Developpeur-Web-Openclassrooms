@@ -1,4 +1,4 @@
-(async ()  =>{
+(async ()  => {
 
     let photo;
     
@@ -7,23 +7,23 @@
             element.setAttribute('class', 'photo');
             element.innerHTML = `                
                     <img class="apercu" src="${data.imageUrl}" alt="${data.title}" data-id="${data.id}">
-                    <a href="" class="supp" data-id="${data.id}">
+                    <a href="#" class="supp" data-id="${data.id}">
                         <img src="./assets/icons/supprimer.png"     
                             alt="supprimer" 
                             class="sup-icon">
-                    </a>
+                    </a>        
                     <p>Modifier</p>               
             `; 
-            console.log(".photo",data.id);       
+            console.log(".photo", data.id);     
         }
         return element;
     }
 
     const loadPhoto = async () => {
         const response = await fetch("http://localhost:5678/api/works");
-        const data = await response.json(); 
-        console.log(data);   
-        return data;    
+        const data = await response.json();
+        console.log(data);
+        return data;
     }
 
     const updatePhotoContainer = (photo) => {
@@ -33,13 +33,16 @@
             const photoElement = createPhotoElement(photo);
             photoContainer.appendChild(photoElement);
         })
+        initDeleteEventListeners();
     }
 
     const main = async () => {
         photo = await loadPhoto();
         updatePhotoContainer(photo);
     }
-    await main ();
+    await main();
+
+    
 
 })()
 

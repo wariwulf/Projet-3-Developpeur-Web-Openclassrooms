@@ -27,10 +27,11 @@ exports.create = async (req, res) => {
 
 exports.delete = async (req, res) => {
 	try {
+		console.log('DELETE WORK ' + req.params.id)
 		await Works.destroy({ where: { id: req.params.id } })
 		return res.status(204).json({ message: 'Work Deleted Successfully' })
 	} catch (e) {
-		return res.status(500).json({ error: new Error('Something went wrong')})
+		return res.status(500).json({ error: new Error('Something went wrong') })
 	}
 
 }

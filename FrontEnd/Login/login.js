@@ -15,10 +15,10 @@ async function login(email, password) {
       const errorMessage = errorResponseData.message; // extrait le message d'erreur de la réponse
       throw new Error(errorMessage);
     }
-    
+
     const responseData = await response.json();
     console.log(responseData);
-    localStorage.setItem("token",JSON.stringify(responseData.token))
+    localStorage.setItem("token", responseData.token);
     window.location.href = "../index.html";
   } catch (error) {
     console.error(error);
