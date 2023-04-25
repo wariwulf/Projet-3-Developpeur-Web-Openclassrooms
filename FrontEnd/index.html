@@ -61,7 +61,7 @@
 				<input type="email" name="email" id="email">
 				<label for="message">Message</label>
 				<textarea name="message" id="message" cols="30" rows="10"></textarea>
-				<input type="submit" value="Envoyer">
+				<input type="submit" value="Envoyer" class="envoyer">
 			</form>
 		</section>
 	</main>
@@ -103,8 +103,9 @@
 						<div class="depot-illus">
 								<img src="./assets/icons/Group.png" alt="Ajouter une photo" class="img-depot"/>
 						</div>
-						<!--<label for="depo-img" id="depo-btn">+ Ajouter photo</label>-->
-						<input name="image" type="file" id="depo-img">
+						<label for="depo-img" id="depo-btn">+ Ajouter photo</label>
+						<p class="img-details">jpg, png : 4mo max</p>
+						<input name="image" type="file" id="depo-img" style="display: none;">
 					</div>
 					<div class="title">
 						<label for="titre">Titre</label>
@@ -116,7 +117,7 @@
 						</select>
 					</div>
 					<div class="validation">	
-						<input type="submit" value="Valider">
+						<input type="submit" value="Valider" class="valider">
 					</div>	
 				</form>
 			</div>

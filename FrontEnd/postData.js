@@ -4,7 +4,7 @@ function envoyerFormulaire(event) {
     const form = event.target;
     console.log(form);
     const formData = new FormData(form);
-    const token = JSON.parse(localStorage.getItem("token"));
+    const token = localStorage.getItem("token");
   
     const options = {
       method: "POST",

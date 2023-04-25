@@ -12,7 +12,7 @@
                             alt="supprimer" 
                             class="sup-icon">
                     </a>        
-                    <p>Modifier</p>               
+                    <p>éditer</p>               
             `; 
             console.log(".photo", data.id);     
         }

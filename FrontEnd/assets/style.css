@@ -247,7 +247,7 @@ margin: auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"]{
+.envoyer {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -286,13 +286,14 @@ footer nav ul {
 	position: fixed;
 	flex-direction: column;
 	align-items: center;
-	left: 25%;
-	top: 5%;
+	left: 30%;
+	top: 10%;
 	background-color: white;
 	padding: 20px;
 	border: 1px solid #888;
 	width: 40%;
 	height: 75%;
+	border-radius: 15px;
   }
   
   .close {
@@ -327,11 +328,10 @@ footer nav ul {
 	display: grid;
 	justify-content: center;
 	width: 90%;
-	height: 80%;
+	height: 75%;
 	grid-template-columns: repeat(5, 15%);
     grid-template-rows: repeat(3, 30%);
-	grid-auto-flow: dense;
-	grid-gap: 40px;
+	grid-gap: 15px;
 }
 
 
@@ -342,9 +342,10 @@ footer nav ul {
 }
 
 .photo .sup-icon {
-	width: 20px; 
-	height: 20px;
-	opacity: 0.6; 
+	width: 80%; 
+	height: 80%;
+	opacity: 0.6;
+	border-radius: 5px; 
 }
 
 .photo .sup-icon:hover {
@@ -352,11 +353,39 @@ footer nav ul {
 	cursor: pointer;
 }
 
+.photo a {
+	position: absolute;
+  	top: 5%;
+  	right: 0;
+	left: 70%;
+  	z-index: 1;
+}
+
 
 .photo img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	position: relative;
+	z-index: 0;
+}
+
+.photo:hover::after {
+	content: "";
+	background-image: url("./icons/Move.png");
+	background-size: cover;
+	position: absolute;
+	z-index: 1;
+	top: 5%;
+	left: 40%;
+	border-radius: 10%;
+	width: 25%;
+	height: 15%;
+	opacity: 0.7;
+}
+
+::after:hover{
+	opacity: 1;
 }
 
 .footer-modal{
@@ -438,13 +467,13 @@ footer nav ul {
 	flex-direction: column;
 	align-items: center;
 	position: fixed;
-	left: 25%;
-    top: 15%;
+	left: 30%;
+    top: 10%;
 	background-color: white;
 	padding: 20px;
-	border: 1px solid #888;
 	width: 40%;
 	height: 75%;
+	border-radius: 15px;
   }
 
   .modal-content-works h2{
@@ -458,8 +487,7 @@ footer nav ul {
 	flex-direction: column;
 	align-items: center;
 	width: 80%;
-	height: 70%;
-	padding: 20px;
+	height: 90%;
 }
 
 .depot {
@@ -469,14 +497,19 @@ footer nav ul {
 	background-color: #E8F1F6;
 	width: 100%;
 	height: 40%;
-	border: 1px solid #ccc;
   	overflow: hidden;
+	border: none;
+	border-radius: 5px;
 }
 
 .depot-illus {
+	display: flex;
 	margin: 15px;
 }
 
+.img-depot {
+	margin-top: 20%;
+}
 
 #depot-img {
 	width: 25%;
@@ -493,9 +526,21 @@ footer nav ul {
 	color: #306685;
 	border: none;
 	border-radius: 50px;
-	width: 50%;
+	width: 35%;
+	height: 20%;
 	cursor: pointer;
 	opacity: 0.8;
+	margin-top: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.3em;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.img-details {
+	margin-bottom: 5%;
 }
 
 #depo-btn:hover{
@@ -504,38 +549,69 @@ footer nav ul {
 }
 
 .title {
-	margin: 20px;
+	margin-top: 5%;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	font-size: 1em;
 }
 
 #ajout-titre {
+	margin-top: 1%;
 	font-size: 1.5em;
 	color: #888;
 	padding: 5px;
+	border: none;
+	border-radius: 5px;
+	box-shadow:
+		0px 0.5px 3.3px -10px rgba(0, 0, 0, 0.108),
+		0px 1.5px 9.1px -10px rgba(0, 0, 0, 0.155),
+		0px 3.6px 22px -10px rgba(0, 0, 0, 0.202),
+		0px 12px 73px -10px rgba(0, 0, 0, 0.31)
+	;
 }
 
 #categorie{
 	padding: 10px;
 	background-color: white;
 	border-radius: 5px;
-	border: 1px solid #aaa;
+	margin-top: 1%;
+	border: none;
+	box-shadow:
+		0px 0.5px 3.3px -10px rgba(0, 0, 0, 0.108),
+		0px 1.5px 9.1px -10px rgba(0, 0, 0, 0.155),
+		0px 3.6px 22px -10px rgba(0, 0, 0, 0.202),
+		0px 12px 73px -10px rgba(0, 0, 0, 0.31)
+	;	
 }
 
 .cat {
 	width: 100%;
-	margin-bottom: 40px;
+	margin-top: 5%;
+	margin-bottom: 10%;
 	display: flex;
 	flex-direction: column;
+	font-size: 1em;
 }
 
 .validation {
 	width: 100%;
+	height: 20%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border-top: 1px solid #888;
 	margin-bottom: 10px;
-	margin-top: auto;
+}
+
+.valider {
+	height: 30%;
+	width: 50%;
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	text-align: center;
+	border-radius: 60px ;
 }
