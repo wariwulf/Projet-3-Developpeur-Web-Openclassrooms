@@ -107,14 +107,21 @@ a {
 }
 
 
+.modif-art {
+	width: fit-content;
+	position: absolute;
+}
+
 li:hover {
 	color: #B1663C;
 }
 #introduction {
 	display: flex;
 	align-items: center;
+	box-sizing: border-box;
 }
 #introduction figure {
+	position: relative;
 	flex: 1
 }
 #introduction img {

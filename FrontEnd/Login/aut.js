@@ -18,7 +18,7 @@ if(localStorage.getItem("token")) {
     const modifier = document.createElement("div");
     modifier.setAttribute('class', 'modifier');
     modifier.innerHTML = `
-      <a href="#modifier-modal" id="modifier-link" class="link">
+      <a href="" id="modifier-link" class="link">
       <img class="img-modifier" src="./assets/icons/modifier.png" alt="Modifier"/>
       Modifier
       </a>
@@ -32,6 +32,20 @@ if(localStorage.getItem("token")) {
     `;
     const remp = document.querySelector("#top-portfolio");
     remp.replaceWith(modifier);
+
+    const article = document.getElementById ("article");
+    const modifierArticle = document.createElement ("div");
+    modifierArticle.classList.add ("modif-art");
+    modifierArticle.innerHTML = `
+      <a href="" id="modifier-link" class="link">
+        <img class="img-modifier" src="./assets/icons/modifier.png" alt="Modifier"/>
+        Modifier
+      </a>
+      `;
+    article.appendChild (modifierArticle);  
+
+
+
   
     const modifierModal = document.querySelector('#modifier-modal');
     const modifierLink = document.querySelectorAll('#modifier-link');
@@ -46,7 +60,7 @@ if(localStorage.getItem("token")) {
         modalVisible = true;
       });
     });
-    
+
     // Fermer la modale lorsque l'utilisateur clique sur la croix
     closeBtn.addEventListener('click', function() {
         modifierModal.style.display = 'none';
