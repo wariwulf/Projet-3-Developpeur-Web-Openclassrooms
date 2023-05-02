@@ -1,5 +1,4 @@
 if(localStorage.getItem("token")) {
-    console.log(localStorage.getItem("token"));
 
     const logoutLi = document.createElement("li");
     const logoutLink = document.createElement("a");

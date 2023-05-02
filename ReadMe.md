@@ -46,15 +46,17 @@ Appel de la fonction aut.js qui, si elle détecte un token valide de connexion, 
 
 Création de deux modale:
 1. Modale de Connexion
+
+    La modale de connexion est implémenter de manière à apparaître un fois cliqué sur le lien "modifier" qui apparaît une fois une l'utilisateur authentifier. Elle permet d'avoir un rendu des travaux grâce à une requête GET et la possibilité de supprimer un works avec une requête DELETE.
+    Un bouton est implémenter en bas de la modale pour accéder à la modale d'ajout.
+
 2. Modale d'ajout.
 
-1. La modale de connexion est implémenter de manière à apparaître un fois cliqué sur le lien "modifier" qui apparaît une fois une l'utilisateur authentifier. Elle permet d'avoir un rendu des travaux grâce à une requête GET et la possibilité de supprimer un works avec une requête DELETE.
-Un bouton est implémenter en bas de la modale pour accéder à la modale d'ajout.
-
-2. La modale d'ajout est un formulaire dans le quel ont à deux input et un select.
+    La modale d'ajout est un formulaire dans le quel ont à deux input et un select.
             1.  Pour l'image
             2.  Pour le Titre
             3.  Pour la catégorie
-La categorie est récupérer via une requête Get sur l'API.
-Une fois rempli, le formulaire envoie la réponse sur l'API via une requête POST sécurisé avec le token en header.
-Si les données sont conformes, elles sont ajouté à la base de donnés. Le works s'affiche alors dans le site.        
+    La categorie est récupérer via une requête Get sur l'API.
+    Une fois rempli, le formulaire envoie la réponse sur l'API via une requête POST sécurisé avec le token en header.
+    Si les données sont conformes, elles sont ajouté à la base de donnés. Le works s'affiche alors dans le site. 
+           
