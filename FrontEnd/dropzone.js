@@ -3,6 +3,7 @@ const depotIllus = document.querySelector (".depot-illus");
 const button = document.querySelector ("#depo-btn");
 const details = document.querySelector (".img-details");
 const depot = document.querySelector (".depot");
+let imageLoaded = false;
 button.addEventListener("click", function() {
   input.click();
 });
@@ -24,6 +25,7 @@ input.addEventListener("change", function() {
       depot.style.backgroundSize = "contain";
       depot.style.backgroundPosition = "center";
       depot.style.backgroundRepeat = "no-repeat";
+      imageLoaded = true;
     });
   });
 

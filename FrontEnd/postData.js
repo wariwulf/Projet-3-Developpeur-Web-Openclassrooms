@@ -5,7 +5,24 @@ function envoyerFormulaire(event) {
     console.log(form);
     const formData = new FormData(form);
     const token = localStorage.getItem("token");
-  
+    
+    if (!imageLoaded) {
+      console.error("Veuillez sélectionner une image");
+      return;
+    }
+
+    const titre = formData.get("title");
+    if (!titre) {
+      console.error("Veuillez saisir un titre");
+      return;
+    }
+
+    const categorie = formData.get("category");
+    if (!categorie) {
+      console.error("Veuillez sélectionner une catégorie");
+      return;
+    }
+    
     const options = {
       method: "POST",
       headers: {
